@@ -4,6 +4,9 @@
 #include <bitset>
 using namespace std;
 
+//Author: Joris C. WIlson
+//I pledge my honor that I have abided by the Stevens Honor System.
+
 // int
 int gcd(int a, int b) { //write a function to find the greatest common divisor of a and b
     if (b == 0) return a;
