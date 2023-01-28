@@ -13,22 +13,33 @@ public:
         cout << "Company - " << Company << endl;
         cout << "Age - " << Age << endl;
     }
+
+    Employee(string name, string company, int age) {
+        Name = name;
+        Company = company;
+        Age = age;
+
+    }
 };
 //there are threee modifiers
 //private means that it is not accessible outside of the class
 //public means you can access it outside of the class
 //protected is the middle ground between public and private
 int main() {
-    Employee employee1;
+    Employee employee1 = Employee("Saldina", "Youtube", 25);
+    /*
     employee1.Name = "Saldina";
     employee1.Company = "Youtube";
     employee1.Age = 25;
+    */
     employee1.IntroduceYourself();
 
-    Employee employee2;
+    Employee employee2 = Employee("Joris", "JPMorgan Chase", 19);
+    /*
     employee2.Name = "Joris";
     employee2.Company = "JPMorgan Chase";
     employee2.Age = 19;
+    */
     employee2.IntroduceYourself();
 
 }
