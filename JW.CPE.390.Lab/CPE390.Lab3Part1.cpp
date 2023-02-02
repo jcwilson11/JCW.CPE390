@@ -4,6 +4,9 @@
 #include <bitset>
 using namespace std;
 
+//Author: Joris Wilson and John Shea
+//I pledge my honor that I have abided by the Stevens Honor System.
+
 //Return the number of even numbers present in the array x, of length n.
 int countEvens(int x[], int n) {
     int count = 0;
