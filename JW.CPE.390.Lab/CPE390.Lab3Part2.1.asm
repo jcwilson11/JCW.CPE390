@@ -1,7 +1,3 @@
-; hello-DOS.asm - single-segment, 16-bit "hello world" program
-;
-; assemble with "nasm -f bin -o hi.com hello-DOS.asm"
-
     org  0x100        ; .com files always start 256 bytes into the segment
 
     ; int 21h is going to want...
