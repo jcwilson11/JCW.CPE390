@@ -31,11 +31,16 @@ void range_reverse(int x[], int n, int a, int b) {
 
 //Remove all values in the array (x) in between index a and index b, inclusive.
 void compact(int x[], int n, int a, int b) {
-    for (int i = b + 1; i < n; i++) {
-        x[a++] = x[i];
+    int i = 0;
+    for (i = 0; i < n - (b - a + 1); i++) {
+        if (i < a) {
+            x[i] = x[i];
+        } else {
+            x[i] = x[i + (b - a + 1)];
+        }
     }
-    for (int i = n - (b - a + 1); i < n; i++) {
-        x[i] = 0;
+    for (int j = i; j < n; j++) {
+        x[j] = 0;
     }
 }
 
