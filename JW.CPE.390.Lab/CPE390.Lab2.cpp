@@ -4,7 +4,7 @@
 #include <bitset>
 using namespace std;
 
-//Author: Joris C. WIlson
+//Author: Joris C. Wilson
 //I pledge my honor that I have abided by the Stevens Honor System.
 
 // int
