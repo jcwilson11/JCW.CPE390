@@ -30,28 +30,26 @@ void extractrgb(uint32_t color, uint8_t& r, uint8_t& g, uint8_t& b){
 }
 
 //Given an array of numbers from 0 to 3(11), pack each number into 2 bits
-uint32_t compress2(const uint32_t x[], uint32_t len){
-    uint32_t packed = 0;
-    for (int i = 0; i < len; i++) {
-        packed = packed | x[i];
-        if (i != len - 1) {
-            packed = packed << 3;
-        }
-    }
-    return packed;
+uint32_t compress2(const uint32_t x[], uint32_t len) {
+uint32_t result = 0;
+for (int i = 0; i<len; i++)
+{
+    result <<= 2;
+    result = result | x[i];
 }
+return result;
+}
+
 
 //pach 3 bits at a time
 uint64_t compress3(const uint32_t x[], uint32_t len){
-    uint64_t packed = 0;
+    uint64_t result = 0;
     for (int i = 0; i < len; i++) {
-        packed = packed | x[i];
-        if (i != len - 1) {
-            packed = packed << 3;
+            result = result << 3;
+            result |= x[i];
         }
+        return result;
     }
-    return packed;
-}
 
 
 int main(){
@@ -70,17 +68,17 @@ int main(){
     cout << "Question 3-----------------------------------" << endl;
     uint8_t r, g, b;
     extractrgb(c, r, g, b);
-    cout << "r=" << bitset<8>(r) << " g=" << bitset<8>(g) << "b=" << bitset<8>(b) << '\n';
+    cout << "r=" << bitset<8>(r) << " g=" << bitset<8>(g) << " b=" << bitset<8>(b) << '\n';
 
     cout << "Question 4-----------------------------------" << endl;
     const uint32_t a1[] = {1, 2, 3, 0, 1, 1, 3, 1, 1, 2, 3, 2};
-    uint32_t packed1 =  compress2(a1, 12);
-    cout << "packed array a1=" << packed1 << '\n';
+    uint32_t result1 =  compress2(a1, 12);
+    cout << "result array a1=" << result1 << '\n';
 
     cout << "Question 5-----------------------------------" << endl;
     const uint32_t a2[] = {0, 7, 4, 6, 1, 5, 4, 4, 6, 1, 7, 5, 3};
-    uint64_t packed2 = compress3(a2, 13);
-    cout << "packed array a2=" << packed2 << '\n';
+    uint64_t result2 = compress3(a2, 13);
+    cout << "result array a2=" << result2 << '\n';
     cout << endl;
 
     return 0;
