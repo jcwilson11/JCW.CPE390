@@ -28,6 +28,7 @@ void print(const uint64_t a[], uint32_t len) {
 int main() {
 // question 1: --------------------------
     count(20);
+/*
 // question 2: --------------------------
     const uint64_t a[] = {9, 1, 2, 4};
     const uint32_t lena = sizeof(a)/sizeof(uint64_t);
@@ -59,6 +60,8 @@ int main() {
     cout << "Binary: " << bitset<64>(res) << endl;
     cout << hex << "Hex: " << res << endl;
 // extra points function: ----------------
+
+*/
 
     return 0;
 }
