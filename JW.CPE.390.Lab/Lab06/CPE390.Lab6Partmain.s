@@ -153,11 +153,36 @@ _main:                                  ## @main
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
+	pushq	%rbx
+	subq	$40, %rsp
+	.cfi_offset %rbx, -24
+	movq	___stack_chk_guard@GOTPCREL(%rip), %rax
+	movq	(%rax), %rax
+	movq	%rax, -16(%rbp)
 	movl	$20, %edi
 	callq	__Z5counti
+	movaps	l___const.main.a+16(%rip), %xmm0
+	movaps	%xmm0, -32(%rbp)
+	movaps	l___const.main.a(%rip), %xmm0
+	movaps	%xmm0, -48(%rbp)
+	leaq	-48(%rbp), %rbx
+	movq	%rbx, %rdi
+	movl	$4, %esi
+	callq	__Z5sumsqPKyj
+	movq	%rbx, %rdi
+	callq	__Z5printPKyj
+	movq	___stack_chk_guard@GOTPCREL(%rip), %rax
+	movq	(%rax), %rax
+	cmpq	-16(%rbp), %rax
+	jne	LBB1_2
+## %bb.1:
 	xorl	%eax, %eax
+	addq	$40, %rsp
+	popq	%rbx
 	popq	%rbp
 	retq
+LBB1_2:
+	callq	___stack_chk_fail
 	.cfi_endproc
                                         ## -- End function
 	.globl	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m ## -- Begin function _ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
@@ -587,5 +612,13 @@ ___clang_call_terminate:                ## @__clang_call_terminate
 	.section	__TEXT,__cstring,cstring_literals
 L_.str:                                 ## @.str
 	.asciz	", "
+
+	.section	__TEXT,__const
+	.p2align	4                               ## @__const.main.a
+l___const.main.a:
+	.quad	9                               ## 0x9
+	.quad	1                               ## 0x1
+	.quad	2                               ## 0x2
+	.quad	4                               ## 0x4
 
 .subsections_via_symbols
