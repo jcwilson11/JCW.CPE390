@@ -27,25 +27,22 @@ void print(const uint64_t a[], uint32_t len) {
 
 int main() {
 
-    /*
 // question 1: --------------------------
     count(20);
 
+/*
 // question 2: --------------------------
     const uint64_t a[] = {9, 1, 2, 4};
     const uint32_t lena = sizeof(a)/sizeof(uint64_t);
     sumsq(a, lena);
     print(a, lena);
 
-
-    */
 // question 3: --------------------------
     uint64_t b[] = {5, 3, 6, 7, 4, 9};
     const uint32_t lenb = sizeof(b)/sizeof(uint64_t);
     add1(b, lenb);
     print(b, lenb);
 
-    /*
 // question 4: --------------------------
     const uint64_t t1 = 0xF2ECBABE;
     uint64_t res4 = replaceZero(t1);
