@@ -1,13 +1,7 @@
-	.globl __Z5counti
-__Z5counti:
+    .globl __Z11replaceZeroy
+__Z11replaceZeroy:
+    mov $0b111001110000, %rax        #rax is 0xf2ecb08e 
+    not %rax
+    and %rcx, %rax
+    ret
 
-    # rcx = the number to count
-    movq $1, %rdx    # rdx =1 counting...
-    cmp  $0, %rcx
-    je   .End
-.Loop:
-    addq $3, %rdx
-    cmpq %rcx, %rdx
-    jle .Loop
-.End:
-    retq

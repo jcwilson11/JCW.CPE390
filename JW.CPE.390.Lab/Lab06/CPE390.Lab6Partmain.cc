@@ -16,6 +16,7 @@ extern uint64_t replaceOne(uint64_t val);
 extern uint64_t toggles(uint64_t val);
 extern uint64_t replaceD(uint64_t val);
 //Please declare the function and create the test case yourself for the extra points function.
+extern uint64_t replaceD(uint64_t input);
 
 void print(const uint64_t a[], uint32_t len) {
     for (int i = 0; i < 4; i++) {
@@ -34,8 +35,8 @@ int main() {
 // question 2: --------------------------
     const uint64_t a[] = {9, 1, 2, 4};
     const uint32_t lena = sizeof(a)/sizeof(uint64_t);
-    sumsq(a, lena);
-    print(a, lena);
+    const uint64_t temp = sumsq(a, lena);
+    cout << temp << endl;
 
 // question 3: --------------------------
     uint64_t b[] = {5, 3, 6, 7, 4, 9};
@@ -63,9 +64,18 @@ int main() {
     uint64_t res = replaceD(t);
     cout << "Binary: " << bitset<64>(res) << endl;
     cout << hex << "Hex: " << res << endl;
+
+    
 // extra points function: ----------------
+    uint64_t input = 0xFEDA981DDAAB;
+    uint64_t expected_output = 0xFECA981CCAAB;
+    uint64_t output = replaceD(input);
+    if (output == expected_output) {
+        cout << "Test passed!" << endl;
+    } else {
+        cout << "Test failed." << endl;
+    }
 
 */
-
     return 0;
 }
