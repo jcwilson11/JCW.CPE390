@@ -44,11 +44,12 @@ void bitmap::clear(uint32_t color) {
 	for (uint32_t i = 0; i < w*h; i++)
 		rgb[i] = color;
 }
-
+/*
 void bitmap::horiz_line(uint32_t x1, uint32_t x2, uint32_t y, uint32_t color) {
 	//TODO: implement this
 	for (uint32_t i = y * w + x1; i <= y * w + x2; i++) rgb[i] = color;
 }
+*/
 
 void bitmap::vert_line(uint32_t y1, uint32_t y2, uint32_t x, uint32_t color) {
 	//TODO: implement this
