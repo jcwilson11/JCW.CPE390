@@ -52,8 +52,9 @@ void bitmap::horiz_line(uint32_t x1, uint32_t x2, uint32_t y, uint32_t color) {
 
 void bitmap::vert_line(uint32_t y1, uint32_t y2, uint32_t x, uint32_t color) {
 	//TODO: implement this
-}
+	for (uint32_t i = x * h + y1; i <= x * h + y2; i++) rgb[i] = color;
 
+}
 
 void bitmap::fill_rect(uint32_t x0, uint32_t y0, uint32_t rw, uint32_t rh, uint32_t color) {
 	//TODO: implement this  
@@ -85,7 +86,6 @@ void bitmap::circle(uint32_t x, uint32_t y, uint32_t d, uint32_t color) {
 void bitmap::fill_circle(uint32_t x0, uint32_t y0, uint32_t d, uint32_t color) {
 	//TODO: implement this  
 }
-
 
 void bitmap::save(const char filename[]) {
 	uint8_t*out;
