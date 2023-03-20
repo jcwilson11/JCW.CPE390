@@ -11,9 +11,9 @@ int main() {
 	bitmap b(1024, 800, 0xFF000000);
 	b.clear(0xFF000000);
 	b.random(500, 400, 300, 200);
-	//b.horiz_line(100, 400, 50, 0xFF000080);
-	//b.horiz_line(100, 400, 100, 0xFF0000FF);
-	//b.horiz_line(100, 400, 170, 0xFF0000FF);
+	b.horiz_line(100, 400, 50, 0xFF000080);
+	b.horiz_line(100, 400, 100, 0xFF0000FF);
+	b.horiz_line(100, 400, 170, 0xFF0000FF);
 	b.vert_line(100, 180, 110, 0xFF0000FF);
 	b.vert_line(100, 180, 350, 0xFF0000FF);
 	b.vert_line(100, 400, 100, 0x00FF00FF);
@@ -26,7 +26,7 @@ int main() {
 	b.rect(200,260, 50,50, 0xFFFFFFFF);
 	b.circle(200,500, 50, 0xFFFFFFFF);
        
-	b.save("test.webp");
+	b.save("test2.webp");
 }
 
 
