@@ -2,7 +2,7 @@ How to use lldb:
 - b main: set a breakpoint at main
 - run: run the program
 - ni: next instruction
-si: step instruction
+- si: step instruction
 - register read: read the registers
 
 

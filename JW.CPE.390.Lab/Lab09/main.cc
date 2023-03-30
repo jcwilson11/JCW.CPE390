@@ -1,5 +1,6 @@
 #include "gcode.hh"
 #include "pipe.hh"
+#include "octagon.hh" //added octagon -JW
 
 
 //  gcode -mcr10 test.gc
@@ -28,7 +29,7 @@ int main(int argc, char* argv[]) {
 		const	double r = 1;
 		const double H = 1;
 		const uint32_t num_concentric_layers = 5;
-		gc.add( new pipe(t, r, H, facets, num_concentric_layers));
+		gc.add( new octagon(t, r, H, facets, num_concentric_layers));
 	}
   gc.draw();
 
